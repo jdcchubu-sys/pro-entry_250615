@@ -76,8 +76,12 @@ header h2{font-size:clamp(12px,2.5vw,15px);color:rgba(255,255,255,.75);margin-bo
 .pref-input{max-width:66%!important;}
 .city-input{max-width:50%!important;}
 .addr2-input{max-width:33%!important;}
-/* ★ readonly住所欄の文字色：Webkit対策 */
-#pref[readonly],#city[readonly]{-webkit-text-fill-color:#1a1a2e;opacity:1;color:#1a1a2e;}
+/* ★ readonly住所欄：初期はプレースホルダーと同系の薄色。検索後にJSで濃色に切り替え */
+#pref[readonly],#city[readonly]{
+  -webkit-text-fill-color:#c8cdd8;
+  color:#c8cdd8;
+  opacity:1;
+}
 #email{max-width:400px;}
 #phone{max-width:260px;}
 .furikomi-fields{display:grid;grid-template-columns:220px minmax(0,220px) minmax(0,180px);gap:0 20px;align-items:start;}
@@ -230,13 +234,13 @@ header h2{font-size:clamp(12px,2.5vw,15px);color:rgba(255,255,255,.75);margin-bo
           <div class="form-group" style="margin-bottom:0;flex:1;min-width:100px;">
             <label>都道府県<span class="req">*</span></label>
             <input type="text" id="pref" class="pref-input" placeholder="愛知県" readonly
-              style="background:#f0f4ff;cursor:default;color:#1a1a2e;-webkit-text-fill-color:#1a1a2e;opacity:1;">
+              style="background:#f9fafb;cursor:default;color:#c8cdd8;-webkit-text-fill-color:#c8cdd8;opacity:1;">
             <div class="err-msg" id="pref-err">都道府県を入力してください</div>
           </div>
           <div class="form-group" style="margin-bottom:0;flex:2;min-width:160px;">
             <label>市区町村</label>
             <input type="text" id="city" class="city-input" placeholder="名古屋市千種区" readonly
-              style="background:#f0f4ff;cursor:default;color:#1a1a2e;-webkit-text-fill-color:#1a1a2e;opacity:1;">
+              style="background:#f9fafb;cursor:default;color:#c8cdd8;-webkit-text-fill-color:#c8cdd8;opacity:1;">
           </div>
         </div>
         <div class="form-group">
