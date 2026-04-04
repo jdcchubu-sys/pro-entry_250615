@@ -71,10 +71,10 @@ input.err{border-color:var(--error)!important;}
 .zip-row{display:flex;align-items:flex-end;gap:10px;}
 .btn-zip{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:.2s;font-family:inherit;}
 .btn-zip:hover{background:var(--navy);}
-.addr-row{display:grid;grid-template-columns:minmax(0,66%) minmax(0,50%) minmax(0,33%);gap:10px;}
+.addr-row{display:grid;grid-template-columns:180px 1fr;gap:10px;}
 @media(max-width:540px){.addr-row{grid-template-columns:1fr;}}
-.pref-input{max-width:66%;}
-.city-input{max-width:50%;}
+.pref-input{max-width:100%;}
+.city-input{max-width:100%;}
 #pref[readonly],#city[readonly]{-webkit-text-fill-color:#c8cdd8;color:#c8cdd8;opacity:1;}
 /* Events */
 .ev-col-header{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px;}
@@ -247,15 +247,18 @@ input.err{border-color:var(--error)!important;}
       <div class="err-msg" id="zip-err">郵便番号を7桁で入力してください</div>
     </div>
     <div class="form-group">
-      <label>都道府県・市区町村・番地建物名<span class="req">必須</span></label>
+      <label>都道府県・市区町村<span class="req">必須</span></label>
       <div class="addr-row">
         <input type="text" id="pref" class="pref-input" placeholder="愛知県" readonly
           style="background:#f9fafb;cursor:default;color:#c8cdd8;-webkit-text-fill-color:#c8cdd8;opacity:1;">
         <input type="text" id="city" class="city-input" placeholder="名古屋市千種区" readonly
           style="background:#f9fafb;cursor:default;color:#c8cdd8;-webkit-text-fill-color:#c8cdd8;opacity:1;">
-        <input type="text" id="addr" placeholder="千種1-30-2">
       </div>
       <div class="err-msg" id="pref-err">都道府県を入力してください</div>
+    </div>
+    <div class="form-group">
+      <label>番地・建物名</label>
+      <input type="text" id="addr" placeholder="例：千種1-30-2 古井ノ坂ビル201" style="max-width:400px;">
     </div>
     <div class="form-group">
       <label>電話番号<span class="req">必須</span></label>
